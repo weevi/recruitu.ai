@@ -1,0 +1,1644 @@
+<!DOCTYPE html> <html lang="en"> <head>     <meta charset="UTF-8">     <meta name="viewport" content="width=device-width, initial-scale=1.0">     <title>RecruitU.ai | Football Performance Analysis</title>     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">     <style>         :root {             --primary-color: #000000;             --accent-color: #ff2d2d;             --text-color: #111111;             --light-gray: #f5f5f5;             --medium-gray: #767676;         }          * {             margin: 0;             padding: 0;             box-sizing: border-box;             font-family: 'Roboto', sans-serif;         }          body {             line-height: 1.5;             color: var(--text-color);         }          /* Navigation */         nav {             position: fixed;             width: 100%;             background: transparent;             padding: 2rem 5%;             display: flex;             justify-content: space-between;             align-items: center;             z-index: 1000;             transition: all 0.3s;         }          nav.scrolled {             background: white;             padding: 1rem 5%;             box-shadow: 0 2px 10px rgba(0,0,0,0.1);         }          .logo {             font-size: 1.8rem;             font-weight: 900;             color: white;         }          nav.scrolled .logo {             color: var(--primary-color);         }          .nav-links {             display: flex;             align-items: center;             gap: 2rem;         }          .nav-links a {             text-decoration: none;             color: white;             font-size: 0.9rem;             font-weight: 500;             text-transform: uppercase;             letter-spacing: 1px;             transition: color 0.3s;         }          nav.scrolled .nav-links a {             color: var(--primary-color);         }          /* Hero Section */         .hero {             height: 100vh;             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),                         url('https://images.unsplash.com/photo-1566577739112-5180d4bf9390?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');             background-size: cover;             background-position: center;             display: flex;             align-items: center;             padding: 0 5%;         }          .hero-content {             max-width: 800px;         }          .hero h1 {             font-size: 4.5rem;             font-weight: 900;             color: white;             line-height: 1.1;             margin-bottom: 1.5rem;             text-transform: uppercase;         }          .hero p {             font-size: 1.2rem;             color: white;             margin-bottom: 2rem;             font-weight: 300;             max-width: 600px;         }          /* Buttons */         .btn {             padding: 1.2rem 3rem;             font-size: 1rem;             font-weight: 700;             text-transform: uppercase;             letter-spacing: 1px;             border: none;             cursor: pointer;             transition: all 0.3s;         }          .btn-primary {             background: white;             color: var(--primary-color);         }          .btn-primary:hover {             background: var(--accent-color);             color: white;         }          /* Sections */         .section {             padding: 8rem 5%;         }          .section-title {             font-size: 2.5rem;             font-weight: 900;             text-transform: uppercase;             text-align: center;             margin-bottom: 4rem;         }          /* Features Grid */         .features-grid {             display: grid;             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));             gap: 3rem;             max-width: 1400px;             margin: 0 auto;         }          .feature-card {             text-align: center;             padding: 2rem;         }          .feature-card i {             font-size: 3rem;             color: var(--accent-color);             margin-bottom: 1.5rem;         }          .feature-card h3 {             font-size: 1.5rem;             font-weight: 700;             margin-bottom: 1rem;         }          /* AI Analysis Section */         .ai-analysis {             background: var(--light-gray);         }          .metrics-grid {             display: grid;             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));             gap: 2rem;             max-width: 1200px;             margin: 0 auto;         }          .metric-card {             background: white;             padding: 2rem;             border-radius: 8px;             box-shadow: 0 4px 6px rgba(0,0,0,0.1);         }          .metric-card h4 {             font-size: 1.2rem;             margin-bottom: 1rem;         }          .metric-input {             width: 100%;             padding: 1rem;             border: 2px solid var(--light-gray);             border-radius: 4px;             font-size: 1rem;         }          [Previous pricing section styles remain the same]          @media (max-width: 768px) {             .nav-links {                 gap: 1rem;             }              .nav-links a:not(.profile-btn) {                 display: none;             }              .profile-btn {                 padding: 0.6rem 1.2rem;                 font-size: 0.8rem;             }              .hero h1 {                 font-size: 3rem;             }              .section {                 padding: 4rem 5%;             }         }     </style> </head> <body>     <nav>         <div class="logo">RecruitU.ai</div>         <div class="nav-links">             <a href="#features">Features</a>             <a href="#analysis">Analysis</a>             <a href="#pricing">Pricing</a>             <a href="profile.html" class="profile-btn">                 <i class="fas fa-user"></i>                 My Profile             </a>         </div>     </nav>      <section class="hero">         <div class="hero-content">             <h1>Your Path to College Football</h1>             <p>AI-powered performance analysis that matches your metrics with college programs. Get your Division potential score today.</p>             <button class="btn btn-primary">Start Analysis</button>         </div>     </section>      <section id="features" class="section">         <h2 class="section-title">Why Choose RecruitU.ai</h2>         <div class="features-grid">             <div class="feature-card">                 <i class="fas fa-robot"></i>                 <h3>AI Analysis</h3>                 <p>Advanced algorithms analyze your metrics against D1 standards</p>             </div>             <div class="feature-card">                 <i class="fas fa-chart-line"></i>                 <h3>Real-Time Tracking</h3>                 <p>Monitor your progress with instant performance updates</p>             </div>             <div class="feature-card">                 <i class="fas fa-trophy"></i>                 <h3>D1 Insights</h3>                 <p>Compare your stats with current D1 athletes</p>             </div>         </div>     </section>      <section id="analysis" class="section ai-analysis">         <h2 class="section-title">Performance Indicators</h2>         <div class="section performance-metrics">             <style>                 .metrics-container {                     max-width: 1000px;                     margin: 0 auto;                     background: white;                     border-radius: 20px;                     box-shadow: 0 10px 30px rgba(0,0,0,0.1);                     padding: 2rem;                 }                  .metrics-section {                     margin-bottom: 3rem;                     padding-bottom: 2rem;                     border-bottom: 2px solid var(--light-gray);                 }                  .metrics-section:last-child {                     border-bottom: none;                     margin-bottom: 0;                     padding-bottom: 0;                 }                  .section-header {                     display: flex;                     align-items: center;                     margin-bottom: 2rem;                 }                  .section-icon {                     width: 40px;                     height: 40px;                     background: var(--accent-color);                     border-radius: 10px;                     display: flex;                     align-items: center;                     justify-content: center;                     margin-right: 1rem;                 }                  .section-icon i {                     color: white;                     font-size: 1.2rem;                 }                  .section-title {                     font-size: 1.4rem;                     font-weight: 700;                     color: var(--primary-color);                     margin: 0;                 }                  .metrics-row {                     display: grid;                     grid-template-columns: repeat(3, 1fr);                     gap: 2rem;                 }                  .metric-field {                     position: relative;                 }                  .metric-label {                     display: block;                     font-size: 0.9rem;                     font-weight: 500;                     color: var(--medium-gray);                     margin-bottom: 0.5rem;                 }                  .metric-input {                     width: 100%;                     padding: 0.8rem 1rem;                     border: 2px solid var(--light-gray);                     border-radius: 8px;                     font-size: 1.1rem;                     transition: all 0.3s;                 }                  .metric-input:focus {                     border-color: var(--accent-color);                     outline: none;                     box-shadow: 0 0 0 3px rgba(255, 45, 45, 0.1);                 }                  .metric-unit {                     position: absolute;                     right: 1rem;                     top: 50%;                     transform: translateY(-50%);                     color: var(--medium-gray);                     font-size: 0.9rem;                     pointer-events: none;                 }                  @media (max-width: 768px) {                     .metrics-row {                         grid-template-columns: 1fr;                         gap: 1rem;                     }                 }             </style>
+
+            <div class="metrics-container">
+                <!-- Physical Measurements -->
+                <div class="metrics-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-ruler"></i>
+                        </div>
+                        <h3 class="section-title">Physical Measurements</h3>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-field">
+                            <label class="metric-label">Height</label>
+                            <input type="text" class="metric-input" placeholder="5'11">
+                            <span class="metric-unit">ft'in"</span>
+                        </div>
+                        <div class="metric-field">
+                            <label class="metric-label">Weight</label>
+                            <input type="number" class="metric-input" placeholder="185">
+                            <span class="metric-unit">lbs</span>
+                        </div>
+                        <div class="metric-field">
+                            <label class="metric-label">Wingspan</label>
+                            <input type="text" class="metric-input" placeholder="6'2">
+                            <span class="metric-unit">ft'in"</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speed & Agility -->
+                <div class="metrics-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3 class="section-title">Speed & Agility</h3>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-field">
+                            <label class="metric-label">40-Yard Dash</label>
+                            <input type="number" class="metric-input" placeholder="4.5" step="0.01">
+                            <span class="metric-unit">sec</span>
+                        </div>
+                        <div class="metric-field">
+                            <label class="metric-label">Pro Agility (5-10-5)</label>
+                            <input type="number" class="metric-input" placeholder="4.2" step="0.01">
+                            <span class="metric-unit">sec</span>
+                        </div>
+                        <div class="metric-field">
+                            <label class="metric-label">3-Cone Drill</label>
+                            <input type="number" class="metric-input" placeholder="7.0" step="0.01">
+                            <span class="metric-unit">sec</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strength & Power -->
+                <div class="metrics-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3 class="section-title">Strength & Power</h3>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-field">
+                            <label class="metric-label">Bench Press (225 lbs)</label>
+                            <input type="number" class="metric-input" placeholder="15">
+                            <span class="metric-unit">reps</span>
+                        </div>
+                        <div class="metric-field">
+                            <label class="metric-label">Vertical Jump</label>
+                            <input type="number" class="metric-input" placeholder="36">
+                            <span class="metric-unit">inches</span>
+                        </div>
+                        <div class="metric-field">
+                            <label class="metric-label">Broad Jump</label>
+                            <input type="number" class="metric-input" placeholder="120">
+                            <span class="metric-unit">inches</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Information -->
+                <div class="metrics-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="section-title">Academic Information</h3>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-field">
+                            <label class="metric-label">GPA</label>
+                            <input type="number" class="metric-input" placeholder="3.5" step="0.01" max="4.0">
+                            <span class="metric-unit">/4.0</span>
+                        </div>
+                        <div class="metric-field">
+                            <label class="metric-label">SAT Score</label>
+                            <input type="number" class="metric-input" placeholder="1200" step="10">
+                            <span class="metric-unit">/1600</span>
+                        </div>
+                        <div class="metric-field">
+                            <label class="metric-label">ACT Score</label>
+                            <input type="number" class="metric-input" placeholder="24">
+                            <span class="metric-unit">/36</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analyze-button-container">
+                <style>
+                    .analyze-button-container {
+                        margin-top: 3rem;
+                        text-align: center;
+                        padding-top: 2rem;
+                        border-top: 2px solid var(--light-gray);
+                    }
+
+                    .analyze-btn {
+                        background: linear-gradient(45deg, var(--accent-color), #ff6b6b);
+                        color: white;
+                        padding: 1.5rem 4rem;
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        border: none;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 12px;
+                        box-shadow: 0 10px 20px rgba(255, 45, 45, 0.2);
+                    }
+
+                    .analyze-btn:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 15px 30px rgba(255, 45, 45, 0.3);
+                    }
+
+                    .analyze-btn i {
+                        font-size: 1.3em;
+                    }
+
+                    /* Loading screen animations */
+                    .loading-text-animate {
+                        animation: fadeInOut 2s infinite;
+                    }
+
+                    @keyframes fadeInOut {
+                        0%, 100% { opacity: 0.6; }
+                        50% { opacity: 1; }
+                    }
+
+                    /* Results feedback section */
+                    .feedback-container {
+                        margin-top: 3rem;
+                        text-align: center;
+                        padding: 2rem;
+                        background: linear-gradient(rgba(255, 45, 45, 0.05), rgba(255, 45, 45, 0.1));
+                        border-radius: 15px;
+                    }
+
+                    .feedback-text {
+                        font-size: 1.2rem;
+                        color: var(--primary-color);
+                        margin-bottom: 2rem;
+                        line-height: 1.6;
+                    }
+
+                    .unlock-btn {
+                        background: var(--accent-color);
+                        color: white;
+                        padding: 1rem 2.5rem;
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        border: none;
+                        border-radius: 50px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .unlock-btn:hover {
+                        transform: translateY(-2px);
+                        background: #ff4444;
+                    }
+                </style>
+
+                <button class="analyze-btn">
+                    <i class="fas fa-chart-bar"></i>
+                    Analyze My Potential
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Analyzing your metrics...</div>
+            <div class="loader-subtext loading-text-animate">Please wait while we process your data</div>
+        </div>
+    </section>
+
+    <section class="results-screen">
+        <h2 class="section-title">Your Performance Analysis</h2>
+        
+        <div class="performance-indicators">
+            <!-- Clear Indicators -->
+            <div class="indicator-card">
+                <div class="indicator-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>D1 Potential Score</h3>
+                <div class="score">87%</div>
+                <p>Your physical metrics show strong D1 potential</p>
+            </div>
+            
+            <div class="indicator-card">
+                <div class="indicator-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Academic Standing</h3>
+                <div class="score">A-</div>
+                <p>You meet NCAA academic requirements</p>
+            </div>
+
+            <!-- Blurred Indicators -->
+            <div class="indicator-card blur">
+                <div class="indicator-icon">
+                    <i class="fas fa-running"></i>
+                </div>
+                <h3>Speed Rating</h3>
+                <div class="score">92%</div>
+                <p>Detailed speed analysis</p>
+            </div>
+
+            <div class="indicator-card blur">
+                <div class="indicator-icon">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <h3>Strength Index</h3>
+                <div class="score">83%</div>
+                <p>Complete strength evaluation</p>
+            </div>
+
+            <div class="indicator-card blur">
+                <div class="indicator-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Growth Potential</h3>
+                <div class="score">High</div>
+                <p>Detailed development projection</p>
+            </div>
+
+            <div class="indicator-card blur">
+                <div class="indicator-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Overall Ranking</h3>
+                <div class="score">4★</div>
+                <p>Complete recruit classification</p>
+            </div>
+        </div>
+
+        <div class="feedback-container">
+            <p class="feedback-text">
+                Based on your metrics, you show strong potential for Division 1 athletics. 
+                Unlock your full analysis to see detailed breakdowns and comparisons with current D1 athletes.
+            </p>
+            <button class="unlock-btn" onclick="showSubscriptionPlans()">
+                <i class="fas fa-lock-open"></i>
+                Unlock Full Analysis
+            </button>
+        </div>
+    </section>
+    
+    <style>
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-screen.active {
+            display: flex;
+        }
+
+        .loader {
+            text-align: center;
+        }
+
+        .loader-circle {
+            width: 80px;
+            height: 80px;
+            border: 8px solid var(--light-gray);
+            border-top: 8px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        .loader-text {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Results Screen */
+        .results-screen {
+            display: none;
+            padding: 4rem 5%;
+        }
+
+        .results-screen.active {
+            display: block;
+        }
+
+        .performance-indicators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .indicator-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .indicator-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .indicator-card.blur {
+            filter: blur(5px);
+            pointer-events: none;
+            position: relative;
+        }
+
+        .indicator-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .indicator-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .indicator-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .score {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .indicator-card p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+    </style>
+
+    <script>
+    document.querySelector('.analyze-btn').addEventListener('click', function() {
+        // Show loading screen
+        const loadingScreen = document.querySelector('.loading-screen');
+        loadingScreen.style.opacity = '0';
+        loadingScreen.style.display = 'flex';
+        
+        // Trigger reflow
+        loadingScreen.offsetHeight;
+        
+        // Fade in
+        loadingScreen.style.opacity = '1';
+        loadingScreen.style.transition = 'opacity 0.3s ease';
+
+        // Loading messages sequence
+        const loadingTexts = [
+            'Analyzing physical metrics...',
+            'Calculating performance scores...',
+            'Comparing with D1 standards...',
+            'Generating your potential report...'
+        ];
+
+        let textIndex = 0;
+        const textInterval = setInterval(() => {
+            document.querySelector('.loader-text').textContent = loadingTexts[textIndex];
+            textIndex = (textIndex + 1) % loadingTexts.length;
+        }, 1500);
+
+        // Show results after delay
+        setTimeout(function() {
+            clearInterval(textInterval);
+            loadingScreen.style.opacity = '0';
+            
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                
+                // Show results
+                const resultsScreen = document.querySelector('.results-screen');
+                resultsScreen.style.opacity = '0';
+                resultsScreen.style.display = 'block';
+                
+                // Trigger reflow
+                resultsScreen.offsetHeight;
+                
+                // Fade in results
+                resultsScreen.style.opacity = '1';
+                resultsScreen.style.transition = 'opacity 0.3s ease';
+                
+                // Smooth scroll to results
+                resultsScreen.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        }, 6000);
+    });
+
+    function showSubscriptionPlans() {
+        const overlay = document.querySelector('.subscription-overlay');
+        overlay.style.display = 'flex';
+        setTimeout(() => {
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }, 10);
+    }
+
+    function hideSubscriptionPlans() {
+        const overlay = document.querySelector('.subscription-overlay');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 300);
+    }
+
+    // Add click handler for plan buttons
+    document.querySelectorAll('.plan-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const planName = this.closest('.plan').querySelector('h3').textContent;
+            const planPrice = this.closest('.plan').querySelector('.price').textContent;
+            showPaymentMethods(planName, planPrice);
+        });
+    });
+
+    function showPaymentMethods(planName, planPrice) {
+        // Hide subscription overlay
+        document.querySelector('.subscription-overlay').classList.remove('active');
+        
+        // Update selected plan details
+        document.querySelector('.selected-plan .plan-name').textContent = planName;
+        document.querySelector('.selected-plan .plan-price').textContent = planPrice;
+        
+        // Show payment overlay
+        const paymentOverlay = document.querySelector('.payment-overlay');
+        paymentOverlay.style.display = 'flex';
+        setTimeout(() => {
+            paymentOverlay.classList.add('active');
+        }, 10);
+    }
+
+    function hidePaymentMethods() {
+        const paymentOverlay = document.querySelector('.payment-overlay');
+        paymentOverlay.classList.remove('active');
+        setTimeout(() => {
+            paymentOverlay.style.display = 'none';
+        }, 300);
+    }
+
+    // Add click handler for continue payment button
+    document.querySelector('.continue-payment-btn').addEventListener('click', function() {
+        const selectedMethod = document.querySelector('input[name="payment"]:checked').id;
+        alert(`Processing payment with ${selectedMethod}... This would typically connect to a payment processor.`);
+    });
+
+    // Close payment overlay when clicking outside
+    document.querySelector('.payment-overlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            hidePaymentMethods();
+        }
+    });
+</script>
+
+<!-- Add this subscription overlay section before the closing body tag -->
+<div class="subscription-overlay">
+    <div class="subscription-popup">
+        <div class="popup-close" onclick="hideSubscriptionPlans()">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <div class="popup-header">
+            <h2>Unlock Your Full Potential</h2>
+            <p>Choose a plan to access your complete performance analysis</p>
+        </div>
+
+        <div class="pricing-plans">
+            <div class="plan">
+                <div class="plan-header">
+                    <h3>Basic</h3>
+                    <div class="price">
+                        <span class="amount">$5.00</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="plan-description">Perfect for athletes just starting their journey</p>
+                </div>
+                <div class="value-prop">
+                    <p class="highlight">Get started with essential metrics tracking</p>
+                </div>
+                <ul class="features">
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Basic Performance Metrics</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Monthly Progress Reports</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Email Support</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Basic Analysis Tools</span>
+                    </li>
+                </ul>
+                <stripe-buy-button
+                    buy-button-id="buy_btn_1R5u3gP1sP1hy5tDSArlRlGs"
+                    publishable-key="pk_test_51R5tw7P1sP1hy5tDhoh2XPdvykJmuH6ttfSU2uAqTp7dtE2tL7yHiYhuqA3aZoy3umsx1GwUMBgnHfcGF1RcmRfs00gchyhs5B"
+                >
+                </stripe-buy-button>
+            </div>
+
+            <div class="plan featured">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Advanced</h3>
+                    <div class="price">
+                        <span class="amount">$13.50</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="plan-description">Ideal for serious athletes targeting college recruitment</p>
+                </div>
+                <div class="value-prop">
+                    <p class="highlight">3x more likely to get noticed by college scouts</p>
+                </div>
+                <ul class="features">
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Everything in Basic, plus:</strong></span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>D1 Comparison Tools</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Weekly Progress Updates</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Priority Support</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>College Match Insights</span>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Performance Predictions</span>
+                    </li>
+                </ul>
+                <stripe-buy-button
+                    buy-button-id="buy_btn_1R5xX7P1sP1hy5tDvVHEbEhV"
+                    publishable-key="pk_test_51R5tw7P1sP1hy5tDhoh2XPdvykJmuH6ttfSU2uAqTp7dtE2tL7yHiYhuqA3aZoy3umsx1GwUMBgnHfcGF1RcmRfs00gchyhs5B"
+                >
+                </stripe-buy-button>
+            </div>
+
+            <div class="plan">
+                <div class="plan-header">
+                    <h3>Premium</h3>
+                    <div class="price">
+                        <span class="amount">$25.00</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <p class="plan-description">The ultimate package for elite athletes</p>
+                </div>
+                <div class="value-prop">
+                    <p class="highlight">Personalized coaching & elite development</p>
+                </div>
+                <ul class="features">
+                    <li class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Everything in Advanced, plus:</strong></span>
+                    </li>
+                    <li class="feature-item premium">
+                        <i class="fas fa-star"></i>
+                        <span>1-on-1 Consultation</span>
+                    </li>
+                    <li class="feature-item premium">
+                        <i class="fas fa-star"></i>
+                        <span>Custom Training Plans</span>
+                    </li>
+                    <li class="feature-item premium">
+                        <i class="fas fa-star"></i>
+                        <span>Recruitment Guidance</span>
+                    </li>
+                    <li class="feature-item premium">
+                        <i class="fas fa-star"></i>
+                        <span>VIP Support 24/7</span>
+                    </li>
+                    <li class="feature-item premium">
+                        <i class="fas fa-star"></i>
+                        <span>College Scout Network Access</span>
+                    </li>
+                    <li class="feature-item premium">
+                        <i class="fas fa-star"></i>
+                        <span>Video Analysis</span>
+                    </li>
+                </ul>
+                <stripe-buy-button
+                    buy-button-id="buy_btn_1R5xPiP1sP1hy5tDc6tL8UiK"
+                    publishable-key="pk_test_51R5tw7P1sP1hy5tDhoh2XPdvykJmuH6ttfSU2uAqTp7dtE2tL7yHiYhuqA3aZoy3umsx1GwUMBgnHfcGF1RcmRfs00gchyhs5B"
+                >
+                </stripe-buy-button>
+            </div>
+        </div>
+
+        <div class="pricing-footer">
+            <div class="guarantee">
+                <i class="fas fa-shield-alt"></i>
+                <p>30-day money-back guarantee. No questions asked.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .subscription-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .subscription-overlay.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .subscription-popup {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        max-width: 1200px;
+        width: 90%;
+        position: relative;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
+
+    .popup-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--light-gray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .popup-close:hover {
+        background: var(--accent-color);
+        color: white;
+    }
+
+    .popup-header {
+            text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .popup-header h2 {
+        font-size: 2.5rem;
+            font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .popup-header p {
+        font-size: 1.2rem;
+        color: var(--medium-gray);
+    }
+
+    .pricing-plans {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .plan {
+        background: var(--light-gray);
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+            position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .plan:hover {
+        transform: translateY(-5px);
+    }
+
+    .plan.featured {
+        background: white;
+        box-shadow: 0 10px 30px rgba(255, 45, 45, 0.1);
+        border: 2px solid var(--accent-color);
+    }
+
+    .plan-badge {
+            position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--accent-color);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .plan-header {
+        margin-bottom: 2rem;
+    }
+
+    .plan-header h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary-color);
+    }
+
+    .period {
+        font-size: 1rem;
+        color: var(--medium-gray);
+    }
+
+    .features {
+        list-style: none;
+        margin-bottom: 2rem;
+        text-align: left;
+        padding-left: 1rem;
+    }
+
+    .features li {
+        margin-bottom: 1rem;
+        color: var(--medium-gray);
+    }
+
+    .features i {
+        color: var(--accent-color);
+        margin-right: 0.5rem;
+    }
+
+    .plan-btn {
+            width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+    .plan-btn:not(.featured) {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .plan-btn.featured {
+        background: var(--accent-color);
+        color: white;
+    }
+
+    .plan-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .subscription-popup {
+            padding: 2rem;
+        }
+
+        .pricing-plans {
+            grid-template-columns: 1fr;
+        }
+        }
+    </style>
+
+<!-- Add this payment overlay section before the closing body tag -->
+<div class="payment-overlay">
+    <div class="payment-popup">
+        <div class="popup-close" onclick="hidePaymentMethods()">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="payment-header">
+            <h2>Select Payment Method</h2>
+            <p>Choose your preferred way to pay</p>
+            <div class="selected-plan">
+                <span class="plan-name">Pro Plan</span>
+                <span class="plan-price">$19.99/month</span>
+            </div>
+        </div>
+
+        <div class="payment-methods">
+            <div class="payment-method">
+                <input type="radio" name="payment" id="credit-card" checked>
+                <label for="credit-card">
+                    <div class="method-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="method-details">
+                        <h3>Credit/Debit Card</h3>
+                        <p>Pay securely with your card</p>
+                        <div class="card-brands">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-discover"></i>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="payment-method">
+                <input type="radio" name="payment" id="paypal">
+                <label for="paypal">
+                    <div class="method-icon">
+                        <i class="fab fa-paypal"></i>
+                    </div>
+                    <div class="method-details">
+                        <h3>PayPal</h3>
+                        <p>Fast and secure payment</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="payment-method">
+                <input type="radio" name="payment" id="apple-pay">
+                <label for="apple-pay">
+                    <div class="method-icon">
+                        <i class="fab fa-apple-pay"></i>
+                    </div>
+                    <div class="method-details">
+                        <h3>Apple Pay</h3>
+                        <p>Quick checkout with Apple Pay</p>
+                    </div>
+                </label>
+            </div>
+
+            <div class="payment-method">
+                <input type="radio" name="payment" id="google-pay">
+                <label for="google-pay">
+                    <div class="method-icon">
+                        <i class="fab fa-google-pay"></i>
+                    </div>
+                    <div class="method-details">
+                        <h3>Google Pay</h3>
+                        <p>Easy payment with Google Pay</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <button class="continue-payment-btn">
+            <i class="fas fa-lock"></i>
+            Continue to Payment
+        </button>
+    </div>
+</div>
+
+<style>
+    .payment-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 2100;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .payment-overlay.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .payment-popup {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        max-width: 600px;
+        width: 90%;
+        position: relative;
+    }
+
+    .payment-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .payment-header h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .payment-header p {
+        color: var(--medium-gray);
+        margin-bottom: 1.5rem;
+    }
+
+    .selected-plan {
+        background: var(--light-gray);
+        padding: 1rem;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .plan-name {
+        font-weight: 600;
+    }
+
+    .plan-price {
+        color: var(--accent-color);
+        font-weight: 700;
+    }
+
+    .payment-methods {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .payment-method {
+        position: relative;
+    }
+
+    .payment-method input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .payment-method label {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem;
+        border: 2px solid var(--light-gray);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .payment-method input[type="radio"]:checked + label {
+        border-color: var(--accent-color);
+        background: rgba(255, 45, 45, 0.05);
+    }
+
+    .method-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--light-gray);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+    }
+
+    .method-icon i {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    .method-details h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .method-details p {
+        color: var(--medium-gray);
+        font-size: 0.9rem;
+    }
+
+    .card-brands {
+        margin-top: 0.5rem;
+    }
+
+    .card-brands i {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+        color: var(--medium-gray);
+    }
+
+    .continue-payment-btn {
+        width: 100%;
+        padding: 1.2rem;
+        background: var(--accent-color);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .continue-payment-btn:hover {
+        background: #ff4444;
+        transform: translateY(-2px);
+    }
+</style>
+
+<script>
+    // Update the plan button click handlers
+    document.querySelectorAll('.plan-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const planName = this.closest('.plan').querySelector('h3').textContent;
+            const planPrice = this.closest('.plan').querySelector('.price').textContent;
+            showPaymentMethods(planName, planPrice);
+        });
+    });
+
+    function showPaymentMethods(planName, planPrice) {
+        // Hide subscription overlay
+        document.querySelector('.subscription-overlay').classList.remove('active');
+        
+        // Update selected plan details
+        document.querySelector('.selected-plan .plan-name').textContent = planName;
+        document.querySelector('.selected-plan .plan-price').textContent = planPrice;
+        
+        // Show payment overlay
+        const paymentOverlay = document.querySelector('.payment-overlay');
+        paymentOverlay.style.display = 'flex';
+        setTimeout(() => {
+            paymentOverlay.classList.add('active');
+        }, 10);
+    }
+
+    function hidePaymentMethods() {
+        const paymentOverlay = document.querySelector('.payment-overlay');
+        paymentOverlay.classList.remove('active');
+        setTimeout(() => {
+            paymentOverlay.style.display = 'none';
+        }, 300);
+    }
+
+    // Add click handler for continue payment button
+    document.querySelector('.continue-payment-btn').addEventListener('click', function() {
+        const selectedMethod = document.querySelector('input[name="payment"]:checked').id;
+        alert(`Processing payment with ${selectedMethod}... This would typically connect to a payment processor.`);
+    });
+
+    // Close payment overlay when clicking outside
+    document.querySelector('.payment-overlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            hidePaymentMethods();
+        }
+    });
+</script>
+
+<!-- Payment Method Selection Modal -->
+<div class="payment-method-modal">
+    <div class="modal-content">
+        <div class="modal-close" onclick="hidePaymentModal()">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <div class="modal-header">
+            <h2>Choose Payment Method</h2>
+            <div class="plan-details">
+                <span class="selected-plan-name">Pro Plan</span>
+                <span class="selected-plan-price">$19.99/month</span>
+            </div>
+        </div>
+
+        <div class="payment-options">
+            <div class="payment-option" onclick="selectPaymentMethod('card')">
+                <div class="option-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="option-details">
+                    <h3>Credit/Debit Card</h3>
+                    <p>Pay securely with your card</p>
+                    <div class="card-brands">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                    </div>
+                </div>
+                <div class="option-select">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="payment-option" onclick="selectPaymentMethod('paypal')">
+                <div class="option-icon paypal">
+                    <i class="fab fa-paypal"></i>
+                </div>
+                <div class="option-details">
+                    <h3>PayPal</h3>
+                    <p>Pay with your PayPal account</p>
+                </div>
+                <div class="option-select">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="payment-option" onclick="selectPaymentMethod('apple-pay')">
+                <div class="option-icon apple">
+                    <i class="fab fa-apple"></i>
+                </div>
+                <div class="option-details">
+                    <h3>Apple Pay</h3>
+                    <p>Quick payment with Apple Pay</p>
+                </div>
+                <div class="option-select">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="payment-option" onclick="selectPaymentMethod('google-pay')">
+                <div class="option-icon google">
+                    <i class="fab fa-google"></i>
+                </div>
+                <div class="option-details">
+                    <h3>Google Pay</h3>
+                    <p>Pay with Google Pay</p>
+                </div>
+                <div class="option-select">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Card Payment Form -->
+<div class="card-payment-form">
+    <div class="modal-content">
+        <div class="modal-close" onclick="hideCardForm()">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back</span>
+        </div>
+
+        <div class="modal-header">
+            <h2>Enter Card Details</h2>
+            <div class="plan-details">
+                <span class="selected-plan-name">Pro Plan</span>
+                <span class="selected-plan-price">$19.99/month</span>
+            </div>
+        </div>
+
+        <form id="cardForm" onsubmit="processCardPayment(event)">
+            <div class="form-group">
+                <label>Card Number</label>
+                <div class="card-input">
+                    <input 
+                        type="text" 
+                        id="cardNumber" 
+                        placeholder="1234 5678 9012 3456"
+                        maxlength="19"
+                        oninput="formatCardNumber(this)"
+                        required
+                    >
+                    <div class="card-brands">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input 
+                        type="text" 
+                        id="expiryDate" 
+                        placeholder="MM/YY"
+                        maxlength="5"
+                        oninput="formatExpiryDate(this)"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label>CVV</label>
+                    <input 
+                        type="text" 
+                        id="cvv" 
+                        placeholder="123"
+                        maxlength="4"
+                        oninput="formatCVV(this)"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Name on Card</label>
+                <input 
+                    type="text" 
+                    id="cardName" 
+                    placeholder="John Doe"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="submit-button">
+                <span class="button-text">Pay Now</span>
+                <span class="button-price"></span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<style>
+.payment-method-modal,
+.card-payment-form {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.plan-details {
+    background: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+    border-color: var(--accent-color);
+    background: #fff5f5;
+}
+
+.option-icon {
+    width: 48px;
+    height: 48px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.option-icon i {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.option-details {
+    flex: 1;
+}
+
+.option-details h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.option-details p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.card-brands {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.card-brands i {
+    font-size: 1.25rem;
+    color: #666;
+}
+
+.option-select {
+    color: #ccc;
+}
+
+/* Card Payment Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.card-input {
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #ff4444;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+// Show payment modal when a plan is selected
+function showPaymentModal(planName, planPrice) {
+    document.querySelector('.selected-plan-name').textContent = planName;
+    document.querySelector('.selected-plan-price').textContent = planPrice;
+    document.querySelector('.payment-method-modal').style.display = 'flex';
+}
+
+// Hide payment modal
+function hidePaymentModal() {
+    document.querySelector('.payment-method-modal').style.display = 'none';
+}
+
+// Handle payment method selection
+function selectPaymentMethod(method) {
+    if (method === 'card') {
+        document.querySelector('.payment-method-modal').style.display = 'none';
+        document.querySelector('.card-payment-form').style.display = 'flex';
+        document.querySelector('.card-payment-form .button-price').textContent = 
+            document.querySelector('.selected-plan-price').textContent;
+    } else {
+        // Handle other payment methods (PayPal, Apple Pay, Google Pay)
+        handleAlternativePayment(method);
+    }
+}
+
+// Hide card form
+function hideCardForm() {
+    document.querySelector('.card-payment-form').style.display = 'none';
+    document.querySelector('.payment-method-modal').style.display = 'flex';
+}
+
+// Format card number with spaces
+function formatCardNumber(input) {
+    let value = input.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+    let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+    input.value = formattedValue;
+}
+
+// Format expiry date
+function formatExpiryDate(input) {
+    let value = input.value.replace(/\D/g, '');
+    if (value.length >= 2) {
+        value = value.slice(0,2) + '/' + value.slice(2);
+    }
+    input.value = value;
+}
+
+// Format CVV
+function formatCVV(input) {
+    input.value = input.value.replace(/\D/g, '');
+}
+
+// Process card payment
+async function processCardPayment(event) {
+    event.preventDefault();
+    const button = event.target.querySelector('.submit-button');
+    const buttonText = button.querySelector('.button-text');
+    const originalText = buttonText.textContent;
+
+    try {
+        // Disable button and show loading state
+        button.disabled = true;
+        buttonText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+        // Simulate payment processing
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Show success message
+        alert('Payment successful! Thank you for your purchase.');
+        
+        // Hide payment form
+        document.querySelector('.card-payment-form').style.display = 'none';
+        
+        // Redirect to success page or dashboard
+        // window.location.href = '/dashboard';
+
+    } catch (error) {
+        alert('Payment failed. Please try again.');
+    } finally {
+        // Reset button state
+        button.disabled = false;
+        buttonText.textContent = originalText;
+    }
+}
+
+// Handle alternative payment methods
+function handleAlternativePayment(method) {
+    const methodNames = {
+        'paypal': 'PayPal',
+        'apple-pay': 'Apple Pay',
+        'google-pay': 'Google Pay'
+    };
+    
+    alert(`Redirecting to ${methodNames[method]} payment...`);
+    // Here you would typically redirect to the respective payment provider
+}
+
+// Close modals when clicking outside
+window.onclick = function(event) {
+    if (event.target.classList.contains('payment-method-modal')) {
+        hidePaymentModal();
+    } else if (event.target.classList.contains('card-payment-form')) {
+        hideCardForm();
+    }
+}
+</script>
+
+<!-- Add Stripe script at the end of the body -->
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+<style>
+/* Add these styles to customize the Stripe button appearance */
+stripe-buy-button {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Optional: Style the Stripe button to match your theme */
+stripe-buy-button::part(button) {
+    width: 100%;
+    background: var(--accent-color);
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+stripe-buy-button::part(button):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional style for the featured plan button */
+.plan.featured stripe-buy-button::part(button) {
+    background: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(255, 45, 45, 0.2);
+}
+</style>
+
+<script>
+// Add scroll event listener for navigation bar
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
+// Add click handler for profile button
+document.querySelector('.profile-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = 'profile.html';
+});
+</script>
+
