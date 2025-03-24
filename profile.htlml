@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | RecruitU.ai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --accent-color: #ff2d2d;
+            --text-color: #111111;
+            --light-gray: #f5f5f5;
+            --medium-gray: #767676;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            line-height: 1.5;
+            color: var(--text-color);
+            background: var(--light-gray);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .profile-btn {
+            background: var(--accent-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white !important;
+        }
+
+        .profile-btn:hover {
+            background: #ff4444;
+        }
+
+        /* Profile Section Styles */
+        .profile-section {
+            padding-top: 8rem;
+        }
+
+        .profile-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-photo {
+            text-align: center;
+        }
+
+        .profile-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--accent-color);
+        }
+
+        .upload-btn {
+            background: var(--light-gray);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 auto;
+        }
+
+        .upload-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .info-field, .stat-field, .academic-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .info-field label, .stat-field label, .academic-field label {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .info-field input, .stat-field input, .academic-field input,
+        .info-field select {
+            padding: 0.8rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .stats-grid, .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .schools-list {
+            margin-top: 1rem;
+        }
+
+        .school-input {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .school-input input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .add-school-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .add-school-btn:hover {
+            transform: scale(1.1);
+            background: #ff4444;
+        }
+
+        .schools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .school-card {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .school-card button {
+            background: none;
+            border: none;
+            color: var(--medium-gray);
+            cursor: pointer;
+        }
+
+        .save-profile-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 2rem auto 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .save-profile-btn:hover {
+            background: #ff4444;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-photo {
+                margin-bottom: 2rem;
+            }
+
+            .info-grid, .stats-grid, .academic-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">RecruitU.ai</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#analysis">Analysis</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="#" class="profile-btn">
+                <i class="fas fa-user"></i>
+                My Profile
+            </a>
+        </div>
+    </nav>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-photo">
+                    <img src="https://via.placeholder.com/150" alt="Profile Photo" id="profile-photo">
+                    <button class="upload-btn">
+                        <i class="fas fa-camera"></i>
+                        Upload Photo
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <h3>Personal Information</h3>
+                    <div class="info-grid">
+                        <div class="info-field">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your full name">
+                        </div>
+                        <div class="info-field">
+                            <label>Date of Birth</label>
+                            <input type="date">
+                        </div>
+                        <div class="info-field">
+                            <label>Position</label>
+                            <select>
+                                <option value="">Select Position</option>
+                                <option value="qb">Quarterback</option>
+                                <option value="rb">Running Back</option>
+                                <option value="wr">Wide Receiver</option>
+                                <option value="te">Tight End</option>
+                                <option value="ol">Offensive Line</option>
+                                <option value="dl">Defensive Line</option>
+                                <option value="lb">Linebacker</option>
+                                <option value="db">Defensive Back</option>
+                                <option value="k">Kicker</option>
+                                <option value="p">Punter</option>
+                            </select>
+                        </div>
+                        <div class="info-field">
+                            <label>Graduation Year</label>
+                            <input type="number" min="2024" max="2030" placeholder="YYYY">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <h3>Athletic Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-field">
+                        <label>Height</label>
+                        <input type="text" placeholder="5'11">
+                    </div>
+                    <div class="stat-field">
+                        <label>Weight</label>
+                        <input type="number" placeholder="185">
+                    </div>
+                    <div class="stat-field">
+                        <label>40-Yard Dash</label>
+                        <input type="number" step="0.01" placeholder="4.5">
+                    </div>
+                    <div class="stat-field">
+                        <label>Vertical Jump</label>
+                        <input type="number" placeholder="36">
+                    </div>
+                    <div class="stat-field">
+                        <label>Bench Press (225 lbs)</label>
+                        <input type="number" placeholder="15">
+                    </div>
+                    <div class="stat-field">
+                        <label>Broad Jump</label>
+                        <input type="number" placeholder="120">
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-academic">
+                <h3>Academic Information</h3>
+                <div class="academic-grid">
+                    <div class="academic-field">
+                        <label>GPA</label>
+                        <input type="number" step="0.01" min="0" max="4.0" placeholder="3.5">
+                    </div>
+                    <div class="academic-field">
+                        <label>SAT Score</label>
+                        <input type="number" min="400" max="1600" step="10" placeholder="1200">
+                    </div>
+                    <div class="academic-field">
+                        <label>ACT Score</label>
+                        <input type="number" min="1" max="36" placeholder="24">
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-schools">
+                <h3>Schools of Interest</h3>
+                <div class="schools-list">
+                    <div class="school-input">
+                        <input type="text" placeholder="Add a school">
+                        <button class="add-school-btn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="schools-grid">
+                        <!-- Schools will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <button class="save-profile-btn">
+                <i class="fas fa-save"></i>
+                Save Profile
+            </button>
+        </div>
+    </section>
+
+    <script>
+        // Add school functionality
+        document.querySelector('.add-school-btn').addEventListener('click', function() {
+            const input = document.querySelector('.school-input input');
+            const schoolName = input.value.trim();
+            
+            if (schoolName) {
+                const schoolsGrid = document.querySelector('.schools-grid');
+                const schoolCard = document.createElement('div');
+                schoolCard.className = 'school-card';
+                schoolCard.innerHTML = `
+                    <span>${schoolName}</span>
+                    <button onclick="this.parentElement.remove()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                schoolsGrid.appendChild(schoolCard);
+                input.value = '';
+            }
+        });
+
+        // Profile photo upload functionality
+        document.querySelector('.upload-btn').addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById('profile-photo').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        });
+
+        // Save profile functionality
+        document.querySelector('.save-profile-btn').addEventListener('click', function() {
+            // Here you would typically save the profile data to a backend
+            alert('Profile saved successfully!');
+        });
+    </script>
+</body>
+</html>
